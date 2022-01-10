@@ -166,7 +166,13 @@ void nrf_modem_os_trace_irq_set(void);
 void nrf_modem_os_trace_irq_clear(void);
 
 /**
- * @brief Output Trace data from the trace buffer.
+ * @brief Receive trace data from the modem.
+ *
+ * The modem library calls this function to forward trace data to the application.
+ *
+ * The memory pointed to by @p data is not freed until
+ * @ref nrf_modem_trace_processed_callback is called.
+ * The application may thus defer the processing trace data as necessary.
  *
  * @param data Memory buffer containing the output trace data.
  * @param len  Memory buffer length.

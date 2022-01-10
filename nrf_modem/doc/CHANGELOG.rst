@@ -9,6 +9,26 @@ Changelog
 
 All notable changes to this project are documented in this file.
 
+nrf_modem 1.5.0
+***************
+
+* tmp restructure
+* project: automated_release: Group config
+* project: automated_release: start of automated release process
+* ztest: Fix failure output of ztest build script
+* rpc: trace: Add support for deferred trace processing
+* tests: interfaces: mfu: spelling error in comments
+* interface: mfu: Rename mfu2 to mfu
+* interface: mfu: Removal of DFU socket
+* ztest: correct test_group filter
+* ci: Adding build system test stage
+* CODEOWNERS Remove @even from CODEOWNERS
+* test: ztest: at: replace sleeps with semaphores
+* manifest: update manifest for v1.4.1 release
+* include: nrf_modem_gnss: fix incorrect use of doxygen tag
+* version: update VERSION to 1.4.1
+* inteface: ip: fix handling of RPC_IP_ERR_WOULDBLOCK in send()
+
 nrf_modem 1.4.1
 ***************
 
