@@ -9,6 +9,17 @@ Changelog
 
 All notable changes to this project are documented in this file.
 
+nrf_modem 1.5.0
+***************
+
+* Socket options are truncated when calling :c:func:`getsockopt`.
+* The required number of OS semaphores is now exported. 
+* Added support to unset  the AT notif handler.
+* Logging have been added for the GNSS and AT interface.
+* The DFU socket has been removed.
+* The AT socket has been removed.
+* Fixed a bug in :c:func:`nrf_recvfrom` which, in some cases using IP/TLS, lead the function to loop forever if the socket was closed by another thread.
+
 nrf_modem 1.4.1
 ***************
 
