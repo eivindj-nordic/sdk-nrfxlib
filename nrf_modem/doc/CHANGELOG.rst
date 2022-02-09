@@ -9,6 +9,19 @@ Changelog
 
 All notable changes to this project are documented in this file.
 
+nrf_modem 1.5.0
+***************
+
+* The AT socket has been removed.
+* The DFU socket has been removed.
+* Added support for deferred processing of modem traces.
+* Introduced the nrf_modem_trace_processed_callback() function that the application must call after it has processed a trace received in nrf_modem_os_trace_put.
+* It is now possible to unset the AT notification handler by passing NULL to nrf_modem_at_notif_handler_set()
+* The number of required semaphores is now exported in nrf_modem_os.h
+* Fixed a bug where nrf_getsockopt() would not truncate the socket option as intended when the buffer provided was too small.
+* Fixed a bug where closing a socket while another thread was in a recv() operation on the same socket would result in a crash.
+* Fixed a bug in the delta DFU interface where the nrf_modem_delta_dfu_offset() call could return an unexpected error code in some cases.
+
 nrf_modem 1.4.1
 ***************
 
