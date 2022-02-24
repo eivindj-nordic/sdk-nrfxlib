@@ -9,6 +9,11 @@ Changelog
 
 All notable changes to this project are documented in this file.
 
+nrf_modem 1.5.1
+***************
+
+* manifest: update manifest for v1.5.1 release
+
 nrf_modem 1.4.1
 ***************
 
