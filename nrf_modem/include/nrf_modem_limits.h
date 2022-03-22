@@ -21,6 +21,9 @@ extern "C" {
 /**@brief Maximum number of AT and IP sockets available at the same time. */
 #define NRF_MODEM_MAX_SOCKET_COUNT 8
 
+/**@brief Maximum size in bytes of shared modem and application memory. */
+#define NRF_MODEM_MAX_SHMEM_SIZE (128 << 10) /* 128KiB */
+
 /**@brief Maximum AT Command Size in bytes. */
 #define NRF_MODEM_AT_MAX_CMD_SIZE 4096
 

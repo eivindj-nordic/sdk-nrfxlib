@@ -9,6 +9,15 @@ Changelog
 
 All notable changes to this project are documented in this file.
 
+nrf_modem 1.5.3
+***************
+
+* Moved the glue initialization to :c:func:`nrf_modem_init`
+* Added a dedicatd heap for trace headers.
+* Fixed a bug where :c:func:`nrf_modem_shutdown` would stall in debug mode.
+* The interface for socket calls (IP) has been rewritten.
+* Added support to configure the RPC list sizes using Kconfig.
+
 nrf_modem 1.5.2
 ***************
 

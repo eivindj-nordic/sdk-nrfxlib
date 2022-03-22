@@ -73,6 +73,21 @@ void *nrf_modem_os_alloc(size_t bytes);
 void nrf_modem_os_free(void *mem);
 
 /**
+ * @brief Allocate a buffer on dedicated trace heap.
+ *
+ * @param bytes Buffer size.
+ * @return void*
+ */
+void *nrf_modem_os_trace_alloc(size_t bytes);
+
+/**
+ * @brief Free a memory buffer in dedicated trace heap.
+ *
+ * @param mem Buffer to free.
+ */
+void nrf_modem_os_trace_free(void *mem);
+
+/**
  * @brief Busy wait.
  *
  * @param usec Microseconds to busy wait for.

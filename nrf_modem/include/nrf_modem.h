@@ -134,6 +134,7 @@ char *nrf_modem_build_version(void);
  * @retval -NRF_EPERM The Modem library is already initialized.
  * @retval -NRF_ETIMEDOUT Modem timed out.
  * @retval -NRF_EIO IPC State fault or missing root digest.
+ * @retval -NRF_EINVAL Unexpected size of RPC control region.
  */
 int nrf_modem_init(const nrf_modem_init_params_t *init_params,
 		   enum nrf_modem_mode_t mode);
