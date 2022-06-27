@@ -136,17 +136,17 @@ typedef void (*nrf_modem_fault_handler_t)(struct nrf_modem_fault_info *fault_inf
 /**@} */
 
 /** @brief Modem library initialization parameters. */
-typedef struct {
+struct nrf_modem_init_params {
 	/** Shared memory configuration */
 	struct nrf_modem_shmem_cfg shmem;
 	/** IPC IRQ priority */
 	uint32_t ipc_irq_prio;
 	/** Modem fault handler */
 	nrf_modem_fault_handler_t fault_handler;
-} nrf_modem_init_params_t;
+};
 
-/**@brief Modem library mode */
-enum nrf_modem_mode_t {
+/** @brief Modem library mode */
+enum nrf_modem_mode {
 	/** Normal operation mode */
 	NORMAL_MODE,
 	/** DFU mode */
@@ -191,8 +191,8 @@ char *nrf_modem_build_version(void);
  * @retval -NRF_EOPNOTSUPP RPC version mismatch.
  * @retval -NRF_EIO IPC State fault or missing root digest.
  */
-int nrf_modem_init(const nrf_modem_init_params_t *init_params,
-		   enum nrf_modem_mode_t mode);
+int nrf_modem_init(const struct nrf_modem_init_params *init_params,
+		   enum nrf_modem_mode mode);
 
 /**
  * @brief Check whether the modem is initialized.
