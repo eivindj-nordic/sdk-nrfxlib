@@ -10,7 +10,6 @@ if(CONFIG_NFC_T2T_NRFXLIB OR CONFIG_NFC_T4T_NRFXLIB)
   add_subdirectory(nfc)
 endif()
 
-add_subdirectory_ifdef(CONFIG_NRF_MODEM               nrf_modem)
 add_subdirectory_ifdef(CONFIG_NRFXLIB_CRYPTO          crypto)
 add_subdirectory_ifdef(CONFIG_OPENTHREAD              openthread)
 add_subdirectory_ifdef(CONFIG_NRF_RPC                 nrf_rpc)

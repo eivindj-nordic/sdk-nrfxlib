@@ -5,11 +5,9 @@
 #
 menu "nrf_modem (Modem library)"
 
-# Selected by NRF_MODEM_LIB in sdk-nrf
+# Selected by NRF_MODEM in sdk-nrf
 config NRF_MODEM
-	bool
-	select NRFX_IPC if SOC_SERIES_NRF91
-	select REQUIRES_FULL_LIBC
+	bool "Modem library"
 
 if NRF_MODEM
 
@@ -21,23 +19,38 @@ config NRF_MODEM_LINK_BINARY
 
 endchoice # NRF_MODEM_BUILD_STRATEGY
 
+config NRF_MODEM_SOC
+	string "SoC"
+	default "invalid"
+
+
+config NRF_MODEM_FLOAT_TYPE
+	string "Float type"
+	default "soft-float"
+
 choice
 	prompt "Variant"
 	help
 	  Choose which binary variant to link with: cellular, DECT PHY or DECT.
 
-config NRF_MODEM_LINK_BINARY_CELLULAR
+config NRF_MODEM_CELLULAR
 	bool "Cellular"
 
-config NRF_MODEM_LINK_BINARY_DECT_PHY
+config NRF_MODEM_DECT_PHY
 	bool "DECT PHY [EXPERIMENTAL]"
 	select EXPERIMENTAL
 
-config NRF_MODEM_LINK_BINARY_DECT
+config NRF_MODEM_DECT
 	bool "DECT NR+ [EXPERIMENTAL]"
 	select EXPERIMENTAL
 
 endchoice
+
+config NRF_MODEM_VARIANT
+	string
+	default "cellular" if NRF_MODEM_CELLULAR
+	default "dect-phy" if NRF_MODEM_DECT_PHY
+	default "dect" if NRF_MODEM_DECT
 
 config NRF_MODEM_LOG
 	bool "Link binary with logs"
